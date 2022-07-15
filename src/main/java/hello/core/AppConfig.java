@@ -16,6 +16,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration //구성정보
 public class AppConfig {
+    //스프링 빈 조회 시 동일한 타입이 둘 이상일 경우 에러남 > 빈 이름 지정
+    //
     @Bean //각메써드에 Bean을 적어주면 spring container에 해당 매써드가 등록됨
     public MemberService memberService() {
 
