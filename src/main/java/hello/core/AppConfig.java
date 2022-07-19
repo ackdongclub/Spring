@@ -38,4 +38,5 @@ public class AppConfig {
        //return new FixDiscountPolicy(); // 할인정책을 변경할 땐 이부분만 변경하면 된다 / OCP 만족
         return new RateDiscountPolicy();
     }
+
 }
