@@ -3,7 +3,10 @@ package hello.core.order;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy(); //추상 + 구체에도 의존 DIP 위반 / 단일 책임X
     // private  final DiscountPolicy discountPolicy = new RateDiscountPolicy(); //새로운 할인정책으로 수정 / OCP 위반
@@ -12,6 +15,7 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository; //DIP 지킴
     private final DiscountPolicy discountPolicy; //DIP를 지킴
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
